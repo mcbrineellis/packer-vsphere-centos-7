@@ -2,6 +2,13 @@
 
 This Packer config builds a vanilla, updated CentOS 7 template.
 
+## Usage
+
+```
+packer init -var-file=./example/config.pkrvars.hcl .
+packer build -var-file=./example/config.pkrvars.hcl .
+```
+
 ## Environment
 
 Config files for each separate virtual environment are stored in a separate repository or sub-folder (see /example).
