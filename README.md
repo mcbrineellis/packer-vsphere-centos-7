@@ -27,7 +27,7 @@ These environment variables are required by Packer to connect up to the vCenter 
 
 ## Credentials
 
-Users are defined in `http/ks.cfg`.  Subiquity takes that info and creates the users and sets the passwords from the hashes in that file.
+Users are defined in `http/ks.cfg`.  Kickstart takes that info and creates the users and sets the passwords from the hashes in that file.
 
 Packer will use the key in `~/.ssh/id_ed25519` to connect up to the system via SSH after install to run the shell provisioner tasks.
 
