@@ -1,4 +1,5 @@
 vsphere_folder      = "packer"
+content_library     = "Packer"
 vm_guest_os_family  = "linux"
 vm_guest_os_name    = "centos"
 vm_guest_os_version = "7"
