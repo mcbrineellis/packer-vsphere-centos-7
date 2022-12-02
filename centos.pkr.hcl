@@ -13,7 +13,7 @@ source "vsphere-iso" "centos" {
     datacenter            = "${var.vsphere_datacenter}"
 
     # Location Configuration
-    vm_name               = "${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}-v${local.build_version}"
+    vm_name               = "${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}"
     folder                = "${var.vsphere_folder}"
     cluster               = "${var.vsphere_cluster}"
     datastore             = "${var.vsphere_datastore}"
@@ -68,7 +68,13 @@ source "vsphere-iso" "centos" {
     # Deploy to content library
     content_library_destination {
       library = "${var.content_library}"
+      ovf = true
+      destroy = true
+      description = "Version: v${local.build_version}\nBuilt on: ${local.build_date}\n${local.build_by}"
     }
+
+    # Wait 2m for IP to settle
+    ip_settle_timeout = "2m"
 }
 
 build {
